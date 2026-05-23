@@ -103,36 +103,13 @@ Integrated chatbot using Dialogflow to help users with:
 
 > Create a folder named `images` and place your screenshots inside it.
 
-## 🏠 Home Page
-
-```md
 ![HomePage](imgs/homepage.png)
-```
 
-## 🔑 Login Page
-
-```md
 ![Login Page](imgs/signin.png)
-```
 
-## 🎫 Booking Page
-
-```md
 ![Create Account Page](imgs/createacount.png)
-```
 
-## 🤖 Chatbot
-
-```md
-![Chatbot](imgs/chatbot.png)
-```
-
-## ⭐ Ratings Page
-
-```md
-![Ratings](images/ratings.png)
-```
-
+![Chatbot](imgs/Chatbot.png)
 ---
 
 # 🗄️ Database Structure
