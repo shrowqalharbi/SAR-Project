@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="refresh" content="43200">
+    <title>Book Ticket</title>
+  
+    <link rel="stylesheet" href="Style1.css">
+    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+    <script>
+        var userName = sessionStorage.getItem("userName") || "Guest";
+        var monthNames = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+
+        function validateAndSearch(event) {
+        
+            event.preventDefault();
+
+            let dateInput = document.getElementById("departureDate").value;
+            if (!dateInput) {
+                alert("Please select a departure date.");
+                return;
+            }
+
+            let inputDate = new Date(dateInput);
+            let today = new Date();
+            today.setHours(0, 0, 0, 0); 
+
+          
+            if (inputDate <= today) {
+                alert("Sorry the Departure Date Should not be in the past.");
+                return; 
+            }
+
+            let fromCity = document.getElementById("fromCity").value;
+            let toCity = document.getElementById("toCity").value;
+            
+            let day = inputDate.getDate();
+            let monthName = monthNames[inputDate.getMonth()];
+            let dateString = day + " " + monthName;
+
+            alert("Dear " + userName + " you want to travel from " + fromCity + " to " + toCity + " on " + dateString);
+            window.location.href = "MinPage_logged.html";
+        }
+
+        function GroupBooking() {
+            let travelersCount = parseInt(document.getElementById("travelers").value);
+            let isGroupChecked = document.getElementById("groupBooking").checked;
+
+            if (isGroupChecked && travelersCount <= 10) {
+                alert("Sorry The Travelers is less than 10");
+                document.getElementById("groupBooking").checked = false; 
+            }
+        }
+    </script>
+    <df-messenger
+  intent="WELCOME"
+  chat-title="SAR"
+  agent-id="16ee76fc-1263-44cc-a00b-39bc383b907c"
+  language-code="en"
+></df-messenger>
+
+</head>
+<body>
+    <header>
+        <div class="social">
+            <a href="https://www.linkedin.com/company/sarsaudirailway/?trk=similar-companies_org_title"><img src="img/1.png" width="40px" height="40px"></a> 
+            <a href="https://x.com/SARSaudiRailway"><img src="img/2.png" width="40px" height="40px"></a>
+            <img src="img/3.png"> <br> customercare@sar.com.sa
+            <img src="img/4.png"> <br> 8001262000
+        </div>
+        <div class="imam">
+             <img src="img/vision-2030.png" width="80px" height="60px">
+            <img src="img/Collage.png" width="60px" height="60px">
+            <img src="img/Imam.png" width="40px" height="60px">
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="MinPage_logged.html">Home</a>
+                <ul>
+                    <li><a href="travel_logged.html">Travel with SAR</a></li>
+                </ul>
+            </li>
+            <li><a href="gallery_logged.html">Gallery</a></li>
+            <li><a href="About_Us_logged.html">ِAbout US</a></li>
+                <li><a href="Book_ticket.html">Book ticket
+
+            </a></li>
+          <li><a href="rating_logged.php">ِRating</a></li>
+          <li>  <a href="logout.php">Logout</a></li>
+           
+        </ul>
+    </nav>
+    
+    <div class="container">
+        <h1>Book Your Ticket</h1>
+        
+        <form  onsubmit="validateAndSearch(event)">
+            
+            <div class="trip-option">
+                <label>
+                    <input type="radio" name="trip" value="one-way" checked>
+                    <span class="btn-text">One Way Trip</span>
+                </label>
+                <label>
+                    <input type="radio" name="trip" value="round-trip">
+                    <span class="btn-text">Round Trip</span>
+                </label>
+                <label>
+                    <input type="radio" name="trip" value="multi">
+                    <span class="btn-text">Multi Route</span>
+                </label>
+            </div>
+            
+            <div class="group-booking">
+                <label><input type="checkbox" id="groupBooking" onclick="GroupBooking()"> <b>Group Booking</b></label>
+                <p>  More than 10 passengers</p>
+            </div>
+        
+            <br>
+            
+            <div class="booking-grid">
+                <div class="input-box">
+                    <label>📍From</label>
+                    <select id="fromCity" required>
+                        <option value="Madah Al-Munawarah" selected>Madah Al-Munawarah</option>
+                        <option value="Riyadh">Riyadh</option>
+                        <option value="Makkah">Makkah</option>
+                        <option value="Dammam">Dammam</option>
+                    </select>
+                </div>
+                
+                <div class="swap-icon">⇄</div>
+                
+                <div class="input-box">
+                    <label>📍To</label>
+                    <select id="toCity" required>
+                        <option value="" selected disabled>Select Arrival</option>
+                        <option value="Riyadh">Riyadh</option>
+                        <option value="Makkah">Makkah</option>
+                        <option value="Dammam">Dammam</option>
+                        <option value="Madah Al-Munawarah">Madah Al-Munawarah</option>
+                    </select>
+                </div>
+
+                <div class="input-box">
+                    <label>📅 Departure Date
+                        <input type="date" id="departureDate" name="Date" required>
+                    </label>
+                </div>
+
+                <div class="input-box">
+                    <label>👤 Travelers
+                        <select id="travelers" onchange="GroupBooking()">
+                            <option value="1">1 Traveler</option>
+                            <option value="2">2 Travelers</option>
+                            <option value="3">3 Travelers</option>
+                            <option value="4">4 Travelers</option>
+                            <option value="5">5 Travelers</option>
+                            <option value="6">6 Travelers</option>
+                            <option value="7">7 Travelers</option>
+                            <option value="8">8 Travelers</option>
+                            <option value="9">9 Travelers</option>
+                            <option value="10">10 Travelers</option>
+                            <option value="11">11 Travelers</option>
+                            <option value="12">12 Travelers</option>
+                            <option value="13">13 Travelers</option>
+                            <option value="14">14 Travelers</option>
+                            <option value="15">15 Travelers</option>
+                            <option value="16">16 Travelers</option>
+                            <option value="17">17 Travelers</option>
+                        </select>
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-actions">
+                <a href="#" style="margin-right:8px">Haramain Train Time Table🚇</a>
+                <input type="submit" value="Search">
+            </div>
+        </form>
+    </div>
+
+    <p class="footer"> &copy; 2nd-2025-26 / IMSIU / CCIS &trade;</p>
+</body>
+</html>

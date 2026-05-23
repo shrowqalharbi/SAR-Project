@@ -1,0 +1,418 @@
+body
+{
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url(img/SAART.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+header
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+      background-color: rgb(61, 160, 196);
+}
+
+.social
+{
+    display: flex;
+    color: #f0fff0;
+    font-size: 10px;
+    width: 40px;
+    height: 40px;
+}
+
+.imam
+{
+    margin-right: 10px;
+       background-color:rgb(61, 160, 196);
+}
+
+nav		
+{ 
+    position: relative;
+	text-align: left;
+	width: 100%;
+	
+
+}
+nav ul		
+{ 
+    list-style: none;
+    display: flex;
+	list-style: none;
+	margin: 0;
+	padding: 0; 
+    background-color:rgb(61, 160, 196);
+}
+nav ul li
+{
+    position: relative;
+    padding: 15px;
+   
+}
+nav ul ul
+{
+    display: none;
+    position: absolute;
+       background-color: rgb(61, 160, 196);
+    padding: 0;
+    min-width: 180px;
+}
+nav ul li:hover ul	
+{ 
+    display: block;
+    top: 100%;
+    left: 0;
+}
+nav ul ul ul 
+{
+    left: 100%;
+    top: 0;
+}
+nav ul li	
+{ 
+    border-top:0px;
+     background-color: rgb(61, 160, 196);
+	width: 70%;
+	color: #f0eaff;
+    font-size: 20px;
+    font-weight:bold;
+ 
+}
+nav a
+{
+    text-decoration: none;
+    display: block;
+}
+nav ul ul li:hover	
+{ 
+background-color: rgb(102, 121, 128)
+}
+
+.container
+{
+    max-width: 1100px;
+  margin: 100px auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+
+      box-shadow: 2px 2px 8px gray;
+       border: 2px solid rgba(106, 143, 255, 0.568); 
+}
+
+.cities
+{
+    border: 10px;
+}
+
+label{
+    color: #0a2e63;
+  display: block;
+    margin-top: 12px;
+  font-weight: 600;
+}
+
+
+#imgG {
+    display: flex;         
+    justify-content: center;
+    gap: 10px;             
+    flex-wrap: wrap;   
+}
+
+#imgG img {
+    width: 30%;         
+    height: auto;          
+    border-radius: 10px;
+    box-shadow: 3px 3px gray;
+}
+
+video {
+    display: block;      
+    margin: 40px auto;
+    width: 80%;       
+    max-width: 800px;    
+    border-radius: 15px;
+    box-shadow: 2px 4px 15px rgba(0,0,0,0.3);
+}
+    .box {
+    width:550px;
+   max-width:900px;
+    margin: 200px auto 50px auto;
+    padding: 35px;
+    background-color: white;
+    border: 2px solid rgba(106, 143, 255, 0.568); 
+    border-radius: 10px; 
+    box-shadow: 2px 2px 8px gray;
+   margin-top:10%;
+
+}
+
+ h2 {
+    color:#1a5276;
+ font-weight: bold;
+}
+
+
+input[type="email"], input[type="password"], input[type="tel"],input[type="date"],input[type="text"]{
+    width: 90%;
+    padding: 15px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    
+}
+
+
+input[type="submit"],input[type="reset"] {
+    background-color: rgba(7, 43, 150, 0.757);
+    color: white;
+    font-weight: bold; 
+    padding: 10px 20px;
+    width: 150px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+}
+
+
+input[type="reset"],input[type="submit"]:hover{
+    background-color: #f6f6f6; 
+    color: rgb(18, 17, 17);
+}
+
+h1 {
+    color: #1a5276;
+    font-size: 22pt; 
+    margin-top: 0;
+}
+
+p {
+    color: #444;
+    font-size:12pt;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+
+
+
+.trip-options input[type="radio"]:checked+label{
+    background-color: #abbfff;
+    color: white;
+    font-weight: bold; 
+  
+    
+}
+
+.group-booking { 
+    text-align: right;
+     font-size: 13pt;
+font-weight: bold;
+
+}
+
+
+.booking-grid {
+    display: flex;
+    align-items: center;
+ 
+}
+
+
+.input-box {
+    width:95%;
+    margin-right:22pt;
+    padding: 10px;            
+
+}
+
+
+.input-box select , .input-box input {
+    width: 100%;
+     border: 2px solid #ccc; 
+border-radius: 10px;    
+    padding: 12px;
+    font-size: 10pt;
+    margin-right:2px;
+}
+
+.swap-icon {
+    color: #431c5d;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 10px;
+margin-top:4%;
+}
+
+
+.form-actions {
+    text-align: right;        
+    margin-top: 30px;         
+    padding-left:20px;
+}
+
+.footer
+{
+    position:sticky;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    background-color:rgb(61, 160, 196);
+    color: white;
+    padding: 0px;
+    margin-top: 40%;
+}
+
+
+.btn-text {
+   padding: 8px 16px;
+    cursor: pointer;
+    background-color: white;
+    margin-right: 5px;
+}
+
+.btn-text:hover {
+    background-color: #f0f0f0;
+}
+
+.trip-option {
+    display: flex;     
+    align-items: center;  
+    cursor: pointer;    
+margin-top:7%;
+   
+}
+
+.trip-option input[type="radio"]:checked + .btn-text {
+    background-color: #f0eaff; 
+    color: #0d1e835c;         
+    border-color: #0d25ad67;
+    font-weight: bold;
+}
+
+
+
+/*about us */
+
+* {
+    box-sizing: border-box;
+}
+
+.slideshow {
+    max-width: 900px; 
+    position: relative;
+    margin: 40px auto;
+    background: #fdfdfd;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.Member_Card {
+    display: none;
+    text-align: center;
+    padding: 50px;
+}
+
+.StName {
+    font-weight: lighter;
+    font-size: 2em;
+    margin-bottom: 30px;
+}
+
+.id{
+    font-weight: lighter;
+    font-size: 1.5em;  
+}
+.group-intro{
+    text-align: center;
+    padding: 20px;
+
+}
+.group-intro p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+}
+.PHOTO {
+    width: 200px; 
+    height: 200px; 
+    object-fit: cover;
+    border-radius: 40%;
+    border: 3px solid #004a99; 
+    display: block;
+    margin: 0 auto 15px;
+}
+
+.slide_controls button {
+    cursor: pointer;
+    position: absolute;
+    top: 55%;
+    width: auto;
+    padding: 12px 20px;
+    color: #004a99;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 1px solid #004a99;
+    font-weight: 600;
+    font-size: 16px;
+    transition: 0.4s ease-in-out;
+    border-radius: 50px;
+    user-select: none;
+    z-index: 10;
+}
+
+.slide_controls button:last-child {
+    right: 15px;
+}
+
+.slide_controls button:first-child {
+    left: 15px;
+}
+
+.slide_controls button:hover {
+    background-color: #004a99;
+    color: white;
+}
+
+.page-num {
+    cursor: pointer;
+    height: 25px;
+    width: 25px;
+    margin: 0 5px;
+    background-color: #ddd;
+    border-radius: 5px;
+    display: inline-block;
+    transition: all 0.3s;
+    line-height: 25px;
+    text-align: center;
+    font-size: 12px;
+}
+
+.page-num.active, .page-num:hover {
+    background-color: #004a99;
+    color: white;
+    transform: scale(1.2);
+}
+
+.Member_Card.active {
+    display: block;
+    animation: smoothShow 1s;
+}
+
+@keyframes smoothShow {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+      <meta http-equiv="refresh" content="43200">
+    <title>SAR Saudi Railway - create account</title>
+    <link rel="stylesheet" href="Style1.css">
+    
+    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+    <script>
+
+
+    var name ;
+function saveUser() {
+    name = document.getElementById("fullName").value;
+    sessionStorage.setItem("userName", name);
+}
+let captcha = "";
+
+function generateCaptcha() {
+    const char = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+    captcha = "";
+
+    for (let i = 0; i < 5; i++) {
+        captcha += char.charAt(Math.floor(Math.random() * char.length));
+    }
+
+    document.getElementById("captchaText").innerText = captcha;
+}
+
+window.onload = function() {
+    generateCaptcha();
+    let today = new Date().toISOString().split('T')[0];
+    document.getElementById("DoB").max = today;
+}
+
+function checkForm() {
+
+    let password = document.getElementById("password").value;
+    let confirm = document.getElementById("confirm").value;
+    let captchaInput = document.getElementById("captchaInput").value;
+    let msg = document.getElementById("msg");
+
+    let hasNumber = false;
+    for (let i = 0; i < password.length; i++) {
+        if (!isNaN(password[i])) {
+            hasNumber = true;
+            break;
+        }
+    }
+
+    if (!hasNumber) {
+        msg.innerHTML = "Password must contain a number";
+        return false;
+    }
+
+    let hasUpper = false;
+    for (let i = 0; i < password.length; i++) {
+        if (password[i] >= 'A' && password[i] <= 'Z') {
+            hasUpper = true;
+            break;
+        }
+    }
+
+    if (!hasUpper) {
+        msg.innerHTML = "Password must contain a capital letter";
+        return false;
+    }
+
+    if (password !== confirm) {
+        msg.innerHTML = "Passwords do not match";
+        return false;
+    }
+
+    if (captchaInput !== captcha) {
+        document.getElementById("Cmsg").innerHTML = "Wrong captcha";
+        return false;
+    }
+
+    return true;
+}
+window.onload = generateCaptcha;
+</script> 
+
+<df-messenger
+  intent="WELCOME"
+  chat-title="SAR"
+  agent-id="16ee76fc-1263-44cc-a00b-39bc383b907c"
+  language-code="en"
+></df-messenger>
+
+</head>
+
+<body>
+
+<header>
+        <div class="social">
+        <a href="https://www.linkedin.com/company/sarsaudirailway/?trk=similar-companies_org_title"><img src="img/1.png" width="40px" height="40px"></a> 
+        <a href="https://x.com/SARSaudiRailway"><img src="img/2.png" width="40px" height="40px"></a>
+        <img src="img/3.png"> <br> customercare@sar.com.sa
+        <img src="img/4.png"> <br> 8001262000
+        </div>
+        <div class="imam">
+             <img src="img/vision-2030.png" width="80px" height="60px">
+        <img src="img/Collage.png" width="60px" height="60px">
+        <img src="img/Imam.png" width="40px" height="60px">
+        </div>
+    </header>
+
+    <nav>
+		<ul>
+			<li><a href="MainPage.html">Home</a>
+        <ul>
+          <li><a href="travel.html">Travel with SAR</a></li>
+        </ul>
+        </li>
+			<li><a href="Gallary.html">Gallery</a></li>
+            <li><a href="About_Us.html">About Us</a></li>
+			<li><a href="create_account.html">Create Account</a></li>
+			<li><a href="Sign_in_Page.html">Sign in</a></li>
+       <li><a href="rating.php">ِRating</a></li>
+		</ul>
+	</nav>
+  
+<div class="box">
+
+    <h1 style="text-align: center;">Create Account</h1>
+
+    <p style="text-align: center; font-size:12pt ; font-weight:bold ;">please enter your info</p>
+
+    <form action="createAcc.php" method="POST" onsubmit="return checkForm()">
+
+      <label>Full Name</label>
+      <input type="text" name="name" pattern="[A-Za-z\s]+" 
+       title="Please enter letters only (numbers are not allowed)"
+       required placeholder="full name">
+
+      <label>ID</label>
+      <input type="text" name="id" required maxlength="10" pattern="\d{10}" title="Please enter exactly 10 digits" placeholder="your ID"><br>
+
+      <label>Date of Birth</label>
+<input type="date" name="DoB" id="DoB" required>
+      <label class="input-box">
+      Nationality<br>
+      <select id="nat" name="nat" required>
+                <option value="">choose your nationality</option>
+                <option value="saudi">saudi</option>
+                <option value="kuwaiti">kuwaiti</option>
+                <option value="bahraini">bahraini</option>
+                <option value="emirati">emirati</option>
+                <option value="Omani">Omani</option>
+                <option value="Qatari">Qatari</option>
+                <option value="Bahraini">Bahraini</option>
+                <option value="Egyptian">Egyptian</option>
+                <option value="Jordanian">Jordanian</option>
+                <option value="Lebanese">Lebanese</option>
+                <option value="Syrian">Syrian</option>
+                <option value="Palestinian">Palestinian</option>
+                <option value="Iraqi">Iraqi</option>
+                <option value="Yemeni">Yemeni</option>
+                <option value="Sudanese">Sudanese</option>
+                <option value="Libyan">Libyan</option>
+                <option value="Tunisian">Tunisian</option>
+                <option value="Algerian">Algerian</option>
+                <option value="Moroccan">Moroccan</option>
+                <option value="American">American</option>
+                <option value="British">British</option>
+                <option value="Other">Other</option>
+                          </select></label>
+
+   <label>Mobile Number
+      <input type="tel" name="mobile" pattern="05[0-9]{8}" placeholder="05xxxxxxxx"></label>
+
+     <label>Email Address
+      <input type="email" name="email" required placeholder="example@mail.com"></label>
+
+      <label>Password<br>
+      <input type="password" name="password" id="password" required minlength="8" placeholder=" enter strong password" onkeyup="validatePassword()">
+      </label>
+      <span id="msg"></span>
+
+      <label>Re-enter Password<br>
+      <input type="password" id="confirm" required placeholder="re-enter password">
+      </label>
+      <label>CAPTCHA</label>
+      <div id="captchaText" style="font-weight:bold; font-size:18px;"></div>
+
+      <input type="text" id="captchaInput" placeholder="Enter CAPTCHA" required>
+      <span id="Cmsg"></span><br>
+      <input type="submit" value="Register" onclick="saveUser() ">
+    </form>
+  </div>
+     <p class="footer"> &copy; 2nd-2025-26 / IMSIU / CCIS &trade;</p>
+
+</body>
+
+</html>

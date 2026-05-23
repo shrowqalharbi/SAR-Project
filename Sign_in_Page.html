@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+     <meta charset="utf-8">
+    <title>Sign In</title>
+    <meta http-equiv="refresh" content="43200">
+    <link rel="stylesheet" href="Style1.css">
+    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+<df-messenger
+  intent="WELCOME"
+  chat-title="SAR"
+  agent-id="16ee76fc-1263-44cc-a00b-39bc383b907c"
+  language-code="en"
+></df-messenger>
+
+</head>
+     
+<body>
+  <header>
+        <div class="social">
+        <a href="https://www.linkedin.com/company/sarsaudirailway/?trk=similar-companies_org_title"><img src="img/1.png" width="40px" height="40px"></a> 
+        <a href="https://x.com/SARSaudiRailway"><img src="img/2.png" width="40px" height="40px"></a>
+        <img src="img/3.png"> <br> customercare@sar.com.sa
+        <img src="img/4.png"> <br> 8001262000
+        </div>
+        <div class="imam">
+           <img src="img/vision-2030.png" width="80px" height="60px">
+        <img src="img/Collage.png" width="60px" height="60px">
+        <img src="img/Imam.png" width="40px" height="60px">
+        </div>
+    </header>
+
+    <nav>
+		<ul>
+			<li><a href="MainPage.html">Home</a>
+        <ul>
+          <li><a href="travel.html">Travel with SAR</a></li>
+        </ul>
+        </li>
+			<li><a href="Gallary.html">Gallery</a></li>
+      <li><a href="About_Us.html">About Us</a></li>
+			<li><a href="create_account.html">Create Account</a></li>
+			<li><a href="Sign_in_Page.html">Sign in</a></li>
+             <li><a href="rating.php">ِRating</a></li>
+		</ul>
+	</nav>
+    
+<div class="box" style=" padding-bottom: 150px;">
+    <form action="signin.php" method="POST">
+
+    <h2>Sign In to SAR</h2>
+<label>Email <br>
+      <input type="email" name="email" placeholder="email" required>
+      </label>
+<label>Password
+        <input type="password" name="pass" placeholder="Password" required>
+</label>
+
+    <input type="submit" name="login" value="Login">
+    
+    <input type="reset" value="Clear">
+       
+<p>to craete an account <a href="create_account.html">Create Account</a></p>
+    </form>
+
+</div>
+<p class="footer"> &copy; 2nd-2025-26 / IMSIU / CCIS &trade;</p>
+
+
+</body>
+</html>

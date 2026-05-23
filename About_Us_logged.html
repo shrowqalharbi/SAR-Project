@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+    <meta http-equiv="refresh" content="43200">
+    <title>SAR train - Travel with SAR</title>
+    <link rel="stylesheet" href="Style1.css">
+</head>
+
+<body>
+    <header>
+        <div class="social">
+        <a href="https://www.linkedin.com/company/sarsaudirailway/?trk=similar-companies_org_title"><img src="img/1.png" width="40px" height="40px"></a> 
+        <a href="https://x.com/SARSaudiRailway"><img src="img/2.png" width="40px" height="40px"></a>
+        <img src="img/3.png"> <br> customercare@sar.com.sa
+        <img src="img/4.png"> <br> 8001262000
+        </div>
+        <div class="imam">
+           <img src="img/vision-2030.png" width="80px" height="60px">
+        <img src="img/Collage.png" width="60px" height="60px">
+        <img src="img/Imam.png" width="40px" height="60px">
+        </div>
+    </header>
+
+    <nav>
+		<ul>
+			<li><a href="MinPage_logged.html">Home</a>
+        <ul>
+          <li><a href="travel_logged.html">Travel with SAR</a></li>
+        </ul>
+        </li>
+			  <li><a href="gallery_logged.html">Gallery</a></li>
+      	<li><a href="About_Us_logged.html">ِAbout US</a></li>
+        <li><a href="Book_ticket.html">Book ticket</a></li>
+        <li><a href="rating_logged.php">ِRating</a></li>
+        <li>  <a href="logout.php">Logout</a></li>
+		</ul>
+	</nav>
+
+    <div class="slideshow">
+
+<section class="group-intro"> 
+        <h1>About Us</h1>
+        <p>
+            We are students from the Information Systems Department at Imam Mohammad Ibn Saud Islamic University,
+            and through this project, we aimed to deliver a digital experience that reflects the ambitions of Saudi Vision 2030.
+            As part of the IS337 Application Development course, we developed a railway web application using modern web technologies such as 
+            HTML5, CSS3, and JavaScript, along with robust database design and integrated software solutions using PHP and MySQL.
+        </p>
+    </section>
+
+    <div class="members-gallery"></div>
+
+    <div class="Member_Card active">
+        <p class="StName">Shrowq alharbi</p>
+        <img src="img/student 2.png" alt="student1" class="PHOTO">
+        <p class="id" >ID:445002238</p>
+        <p class="id">Bachelor's in Information Systems level 6</p>
+        <P class="bio">My hobbies include Artificial Intelligence 
+            and web development. I enjoy learning technical skills 
+            and have an interest in business analysis and project management. 
+            I like working in teams and continuously improving my knowledge to
+             develop useful and effective software solutions.</P>
+    </div>
+
+    <div class="Member_Card">
+        <p class="StName">Jana Hamad Almanea</p>
+        <img src="img/student1.png" alt="student2" class="PHOTO">
+       <p class="id">ID:445003027</p>
+     <p class="id">Bachelor's in Information Systems level 6</p>
+
+        <P class="bio" >My hobbies include programming and exploring modern 
+            technologies and digital solutions. I also have skills
+             in system analysis, database design, and teamwork, 
+             and I enjoy learning new things that help me improve 
+             my technical abilities.</P>
+    </div>
+
+    <div class="Member_Card">
+        <p class="StName">Brooq Raad Alghamdi</p>
+        <img src="img/student 3.png" alt="student3" class="PHOTO">
+        <p class="id">ID:445001088</p>
+        <p class="id">Bachelor's in Information Systems level 6</p>
+
+        <P class="bio">My hobbies are exploring technology and programming,
+            and constantly discovering new ideas to improve myself.
+            My skills include fast learning, analytical thinking, 
+            problem solving, and teamwork.</P>
+    </div>
+
+    <div class="slide_controls">
+        <button onclick="switchProfile(-1)">&#10094; Previous</button>
+        <button onclick="switchProfile(1)">Next &#10095;</button>
+        
+    </div>
+
+    <div class="Points" id="dots">
+
+       <span class="page-num" onclick="currentSlide(1)">1</span>
+       <span class="page-num" onclick="currentSlide(2)">2</span>
+       <span class="page-num" onclick="currentSlide(3)">3</span>
+
+    </div>
+
+</div>
+
+<div class="footer">
+    <p>&copy; 2nd-2025-26 / IMSIU / CCIS &trade;</p>
+</div>
+
+<script>
+    var profileIndex = 1;
+activateProfile(profileIndex);
+
+function switchProfile(n) {
+  activateProfile(profileIndex += n);
+}
+
+function currentSlide(n) {
+  activateProfile(profileIndex = n);
+}
+
+function activateProfile(n) {
+  var i;
+  var cards = document.getElementsByClassName("Member_Card");
+  var Points = document.getElementsByClassName("page-num");
+
+  if (n > cards.length) {profileIndex = 1}
+  if (n < 1) {profileIndex = cards.length}
+
+  for (i = 0; i < cards.length; i++) {
+    cards[i].style.display = "none";
+  }
+
+  for (i = 0; i < Points.length; i++) {
+    Points[i].className = Points[i].className.replace(" active", "");
+  }
+
+  cards[profileIndex-1].style.display = "block";
+
+  if (Points.length > 0) {
+    Points[profileIndex-1].className += " active";
+  }
+  setTimeout(function(){ switchProfile(1); }, 3000);
+}
+</script>
+</body>
+</html>
