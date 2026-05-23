@@ -227,9 +227,13 @@ http://localhost/project-folder-name
 ---
 
 # 👥 Team Project
-
 Developed collaboratively for the Application Development course at
-Imam Mohammad Ibn Saud Islamic University
+Imam Mohammad Ibn Saud Islamic University.
+
+Developed by:
+Shrowq Alharbi
+jana hamad almanea
+brooq alghamdi
 
 ---
 
