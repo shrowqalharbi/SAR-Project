@@ -106,25 +106,25 @@ Integrated chatbot using Dialogflow to help users with:
 ## 🏠 Home Page
 
 ```md
-![Home Page](images/home.png)
+![HomePage](imgs/homepage.png)
 ```
 
 ## 🔑 Login Page
 
 ```md
-![Login Page](images/login.png)
+![Login Page](imgs/signin.png)
 ```
 
 ## 🎫 Booking Page
 
 ```md
-![Booking Page](images/booking.png)
+![Create Account Page](imgs/createacount.png)
 ```
 
 ## 🤖 Chatbot
 
 ```md
-![Chatbot](images/chatbot.png)
+![Chatbot](imgs/chatbot.png)
 ```
 
 ## ⭐ Ratings Page
